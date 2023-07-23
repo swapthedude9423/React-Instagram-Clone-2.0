@@ -13,11 +13,14 @@ const db = mysql.createConnection({
   charset: 'utf8mb4',
 })
 
+console.log("connection param : "+db)
 // CONNECTS DB
 db.connect(err => {
+  console.log("connection init");
   if (err) {
-    error(err.message)
+    error("db connection error : "+err.message)
   }
+  console.log("connection success");
 })
 
 module.exports = db
